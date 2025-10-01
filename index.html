@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Adilet Batyrov</title>
+  <meta name="description" content="Adilet Batyrov"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true" title="Scroll progress">
+    <svg width="56" height="56" viewBox="0 0 56 56">
+      <circle cx="28" cy="28" r="24" stroke="var(--line)" stroke-width="4" fill="none"/>
+      <circle id="pbar" cx="28" cy="28" r="24" stroke="var(--acc1)" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="151" stroke-dashoffset="151"/>
+    </svg>
+  </div>
+
+  <header>
+    <nav class="nav container" aria-label="nav">
+      <a class="brand" href="#top" aria-label="main">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Adilet Batyrov</span>
+      </a>
+      <div class="menu">
+        <a href="#work">Projects</a>
+        <a href="#services">Skills</a>
+        <a href="#about">About Mе</a>
+        <a href="#contact">Contact</a>
+        <button class="pill" id="cmdBtn" aria-haspopup="dialog" aria-controls="cmdk" title="ctrl+K"><span class="kbd">Ctrl</span>+<span class="kbd">K</span></button>
+        <button class="pill" id="themeCycle" title="Сменить акцентную тему" aria-label="Переключить цвет">
+          <span id="themeColorIcon">🟣</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <!--Hero-->
+    <section aria-labelledby="hero-title">
+      <div class="hero">
+        <div>
+          <div class="badges">
+            <span class="badge">Web Developer</span>
+            <span class="badge">Game Dev</span>
+            <span class="badge">Java • JS • HTML/CSS</span>
+          </div>
+          <h1 id="hero-title" class="title">I create fast and unconventional websites <br/>and applications.</h1>
+          <p class="lead">Meaningful design, smooth animations, measurable performance.</p>
+          <div class="cta">
+            <a class="btn" href="#work">View Projects</a>
+            <a class="btn secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-card" role="img" aria-label="tileset">
+          <div class="grid">
+            <div class="tile playable" aria-label="Dna">
+              <video src="dna.mp4" playsinline muted loop autoplay style="width:100%; height:100%; object-fit:cover; border-radius:inherit;"></video>  
+            </div>
+            <div class="tile">
+                <img src="playlist.png" alt="UI experiment screenshot" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;" />
+            </div>
+            <div class="tile playable">
+                <img src="pivachips.png" alt="UI experiment screenshot" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;" />
+            </div>
+            <div class="tile">
+                <img src="playlistjava.png" alt="UI experiment screenshot" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;" />
+            </div>
+            <div class="tile">
+                <img src="valentine.png" alt="UI experiment screenshot" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;" />
+            </div>
+            <div class="tile">
+              <img src="countdown.png" alt="UI experiment screenshot" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Services-->
+    <section id="services" aria-labelledby="svc-title">
+      <h2 id="svc-title">Skills & What I Do</h2>
+      <p class="lead">I design, code, and solve problems. Below are skill capsules - you can drag them around.</p>
+      <div class="drags" id="dragArea" aria-label="capsules">
+        <div class="capsule" style="--x:40%;--y:40%">HTML/CSS/JS</div>
+        <div class="capsule" style="--x:70%;--y:60%">Java Applications</div>
+        <div class="capsule" style="--x:20%;--y:65%">UI/UX design</div>
+        <div class="capsule" style="--x:60%;--y:30%">GameDev</div>
+      </div>
+      <div class="caps" style="margin-top:16px">
+        <!--Skill cards-->
+        <article class="cap">
+          <h3>Web Development</h3>
+          <p>Responsive websites and interfaces without heavy frameworks</p>
+          <div class="chips">
+            <span class="chip">Optimization</span>
+            <span class="chip">Accessibility</span>
+            <span class="chip">UI/UX</span>
+          </div>
+        </article>
+        <article class="cap">
+          <h3>GameDev</h3>
+          <p>Mini-games, shader effects, level design</p>
+          <div class="chips">
+            <span class="chip">Unity</span>
+            <span class="chip">Indi</span>
+            <span class="chip">Fun</span>
+          </div>
+        </article>
+        <article class="cap">
+          <h3>Desktop Applications</h3>
+          <p>Clean structure, fast algorithms</p>
+          <div class="chips">
+            <span class="chip">OOP</span>
+            <span class="chip">UI</span>
+            <span class="chip">Java</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--Projects-->
+    <section id="work" aria-labelledby="work-title">
+      <h2 id="work-title">My projects</h2>
+      <p class="lead"><span class="kbd">J</span>/<span class="kbd">K</span>.</p>
+      <div class="projects" id="projects">
+        <article class="card" tabindex="0">
+            <div class="media">
+                <video src="dna.mp4" playsinline muted loop autoplay alt="DNA Double Helix preview" style="width:100%; height:100%; object-fit:cover;"/>
+                <div class="status">Web • Visualization</div>
+            </div>
+            <div class="content">
+                <h3>DNA Double Helix</h3>
+                <p class="muted">An interactive 3D visualization of the DNA double helix. Built with HTML, CSS, and JavaScript.</p>
+                <div class="tags">
+                    <span>#html</span>
+                    <span>#css</span>
+                    <span>#js</span>
+                    <span>#visualization</span>
+                </div>
+                <div style="margin-top:10px;">
+                    <a href="https://adiletbatyrov0629.github.io/DNADoubleHelix/" target="_blank" class="btn secondary">Visit site</a>
+                </div>
+            </div>
+        </article>
+      </div>
+    </section>
+
+    <!--About-->
+    <section id="about" aria-labelledby="about-title" class="grid-2">
+      <div>
+        <h2 id="about-title">Who I am</h2>
+        <p class="lead">Programmer and student at "IT and Bussiness College". I love building interfaces where form follows function and micro-interactions delight.</p>
+        <div class="caps">
+          <article class="cap">
+            <h3>Instruments</h3>
+            <p>VS Code, Git, Figma, IntelliJIDEA</p>
+            <div class="chips"><span class="chip">Windows</span><span class="chip">Gradle</span><span class="chip">Vite (when needed)</span></div>
+          </article>
+          <article class="cap">
+            <h3>Approach</h3>
+            <p>Simple stacks, fewer dependencies</p>
+          </article>
+        </div>
+      </div>
+      <div>
+        <h2 style="margin-top:0">FAQ</h2>
+        <div class="faq" role="list">
+          <details>
+            <summary>How long does it take to launch a simple landing page?</summary>
+            <div class="ans">A minimal version can be done in a few iterations</div>
+          </details>
+          <details>
+            <summary>Where’s the code?</summary>
+            <div class="ans">Repositories and demos available on GitHub. This site is pure HTML/CSS/JS, no frameworks</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact-->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="lead">You can contact me through the field below</p>
+      <form id="contactForm">
+        <div class="row">
+          <input required name="name" placeholder="Your name" />
+          <input required type="email" name="email" placeholder="Email" />
+        </div>
+        <textarea required name="message" placeholder="Message"></textarea>
+        <button class="pill submit" type="submit">Send</button>
+        <span id="formStatus" class="kbd" aria-live="polite" style="margin-left:10px"></span>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    © <span id="year"></span> Adilet Batyrov · Made with HTML/CSS/JS · <span class="kbd">J</span>/<span class="kbd">K</span> navigation · <span class="kbd">Ctrl</span>+<span class="kbd">K</span> command panel
+  </footer>
+
+  <!--Command Palette-->
+  <div id="cmdk" class="cmdk" role="dialog" aria-modal="true" aria-label="cmd palette">
+    <div class="panel">
+      <header>
+        <span class="kbd">⌘</span>
+        <input id="cmdInput" placeholder="Choose command" />
+      </header>
+      <div id="cmdList" class="list" role="listbox" aria-label="commands"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
