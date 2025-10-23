@@ -728,3 +728,39 @@ footer{
     transform: translateY(0);
   }
 }
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+  opacity: .85;
+}
+.menu a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 860px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  .menu {
+    max-width: 100vw !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+    padding-inline: 16px;
+  }
+
+  .menu a,
+  .menu button.pill {
+    display: block !important;
+    width: 100% !important;
+    max-width: 90vw !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+}
+
