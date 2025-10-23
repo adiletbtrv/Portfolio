@@ -196,3 +196,29 @@ themeCycle.addEventListener('click', () => {
   themeIdx = (themeIdx + 1) % themeColors.length;
   setAccent(themeIdx);
 });
+
+const burger = document.getElementById("burgerBtn");
+const navMenu = document.getElementById("navMenu");
+const themeBtn = document.getElementById("themeCycle");
+
+burger.addEventListener("click", () => {
+  const isActive = burger.classList.toggle("active");
+  navMenu.classList.toggle("open", isActive);
+
+  if (themeBtn) {
+    themeBtn.style.opacity = isActive ? "0" : "1";
+    themeBtn.style.pointerEvents = isActive ? "none" : "auto";
+  }
+});
+
+navMenu.querySelectorAll("a, button").forEach(el => {
+  el.addEventListener("click", () => {
+    burger.classList.remove("active");
+    navMenu.classList.remove("open");
+    if (themeBtn) {
+      themeBtn.style.opacity = "1";
+      themeBtn.style.pointerEvents = "auto";
+    }
+  });
+});
+
