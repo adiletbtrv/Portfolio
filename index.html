@@ -18,22 +18,33 @@
 
   <header>
     <nav class="nav container" aria-label="nav">
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <a class="brand" href="#top" aria-label="main">
         <span class="logo" aria-hidden="true"></span>
         <span>Adilet Batyrov</span>
       </a>
-      <div class="menu">
+
+      <button class="pill" id="themeCycle" title="Сменить акцентную тему" aria-label="Переключить цвет">
+        <span id="themeColorIcon">🟣</span>
+      </button>
+
+      <div class="menu" id="navMenu">
         <a href="#work">Projects</a>
         <a href="#services">Skills</a>
-        <a href="#about">About Mе</a>
+        <a href="#about">About Me</a>
         <a href="#contact">Contact</a>
-        <button class="pill" id="cmdBtn" aria-haspopup="dialog" aria-controls="cmdk" title="ctrl+K"><span class="kbd">Ctrl</span>+<span class="kbd">K</span></button>
-        <button class="pill" id="themeCycle" title="Сменить акцентную тему" aria-label="Переключить цвет">
-          <span id="themeColorIcon">🟣</span>
+        <button class="pill" id="cmdBtn" aria-haspopup="dialog" aria-controls="cmdk" title="ctrl+K">
+          <span class="kbd">Ctrl</span>+<span class="kbd">K</span>
         </button>
       </div>
     </nav>
   </header>
+
 
   <main id="top" class="container">
     <!--Hero-->
