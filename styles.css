@@ -74,8 +74,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 10px var(--pad, clamp(16px,2vw,24px));
+  position: relative;
+  padding-inline: 16px;
 }
 .brand {
   display: flex;
@@ -567,5 +567,164 @@ footer{
   }
   #themeCycle {
     display: inline-block;
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.burger span {
+  height: 3px;
+  width: 100%;
+  background: var(--fg);
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .burger {
+    display: flex;
+    margin-left: 4px;
+  }
+
+  #themeCycle {
+    margin-right: 4px;
+    transition: opacity 0.35s ease;
+  }
+
+  .brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background: color-mix(in oklab, var(--bg), transparent 10%);
+    backdrop-filter: blur(14px);
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
+    z-index: 90;
+    padding: 40px 20px;
+  }
+
+  .menu.open {
+    transform: translateY(0);
+  }
+
+  .menu a,
+  .menu button.pill {
+    font-size: 16px;
+    padding: 10px 14px;
+    width: auto;
+  }
+
+  .menu.open ~ #themeCycle {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (pointer: coarse), (hover: none) {
+  #cursorOrb {
+    display: none !important;
+  }
+  body, html {
+    cursor: default !important;
+  }
+}
+
+@media (max-width: 860px) {
+  #themeCycle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    flex-shrink: 0;
+    align-self: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+
+  .brand {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .burger {
+    order: 1;
+  }
+
+  .brand {
+    order: 2;
+  }
+
+  #themeCycle {
+    order: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    flex-shrink: 0;
+    align-self: center;
+    margin-right: 6px;
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background: color-mix(in oklab, var(--bg), transparent 10%);
+    backdrop-filter: blur(14px);
+    transform: translateY(-100%);
+    transition: transform 0.35s ease;
+    z-index: 90;
+    padding: 40px 20px;
+  }
+
+  .menu.open {
+    transform: translateY(0);
   }
 }
